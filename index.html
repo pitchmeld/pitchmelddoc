@@ -32,19 +32,13 @@
         <h1>Pitchmeld Documentation</h1>
         <p>Select a version to browse.</p>
         <label for="version-select">Version:</label>
-        <select id="version-select">
+        <select id="version-select" onchange="window.location.href=this.value">
             <option value="/latest/">latest (default)</option>
             <option value="/v0.81.1.dev11/">v0.81.1.dev11</option>
             <option value="/v0.81.1.dev12/">v0.81.1.dev12</option>
+            <option value="/v0.81.1.dev13/">v0.81.1.dev13</option>
             <option value="/v0.81.1.dev10/">v0.81.1.dev10</option>
         </select>
     </div>
-    <script>
-        document.getElementById('version-select').addEventListener('change', function() {
-            if (this.value) {
-                window.location.href = this.value;
-            }
-        });
-    </script>
 </body>
 </html>
