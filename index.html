@@ -20,10 +20,20 @@
         }
         h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
         p { color: #6c757d; margin-bottom: 1.5rem; font-size: 0.9rem; }
-        label { display: block; text-align: left; font-size: 0.85rem; margin-bottom: 0.25rem; color: #495057; }
-        select {
-            width: 100%; padding: 0.5rem; margin-bottom: 1rem;
-            border: 1px solid #ced4da; border-radius: 4px; font-size: 0.9rem;
+        .version-list {
+            list-style: none; padding: 0;
+        }
+        .version-list li {
+            margin: 0.5rem 0;
+        }
+        .version-list a {
+            display: block; padding: 0.5rem;
+            text-decoration: none; color: #0d6efd;
+            border: 1px solid #ced4da; border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .version-list a:hover {
+            background: #f8f9fa;
         }
     </style>
 </head>
@@ -31,14 +41,14 @@
     <div class="container">
         <h1>Pitchmeld Documentation</h1>
         <p>Select a version to browse.</p>
-        <label for="version-select">Version:</label>
-        <select id="version-select" onchange="window.location.href=this.value">
-            <option value="/latest/">latest (default)</option>
-            <option value="/v0.81.2/">v0.81.2</option>
-            <option value="/v0.82.2/">v0.82.2</option>
-            <option value="/v0.82.3/">v0.82.3</option>
-            <option value="/v0.82.4/">v0.82.4</option>
-        </select>
+        <ul class="version-list">
+            <a href="/latest/">latest (default)</a>
+            <a href="/v0.81.2/">v0.81.2</a>
+            <a href="/v0.82.2/">v0.82.2</a>
+            <a href="/v0.82.3/">v0.82.3</a>
+            <a href="/v0.82.4.dev1/">v0.82.4.dev1</a>
+            <a href="/v0.82.4/">v0.82.4</a>
+        </ul>
     </div>
 </body>
 </html>
