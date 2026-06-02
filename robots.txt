@@ -1,1 +1,1 @@
-Sitemap: https://docs.pitchmeld.ing/latest/sitemap.xml
+Sitemap: https://docs.pitchmeld.ing/sitemap.xml
