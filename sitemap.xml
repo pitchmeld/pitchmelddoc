@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://docs.pitchmeld.ing/latest/sitemap.xml</loc>
-  </sitemap>
-  <sitemap>
     <loc>https://docs.pitchmeld.ing/v0.81.2/sitemap.xml</loc>
   </sitemap>
   <sitemap>
@@ -11,6 +8,9 @@
   </sitemap>
   <sitemap>
     <loc>https://docs.pitchmeld.ing/v0.82.3/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://docs.pitchmeld.ing/v0.82.4.dev3/sitemap.xml</loc>
   </sitemap>
   <sitemap>
     <loc>https://docs.pitchmeld.ing/v0.82.4/sitemap.xml</loc>
