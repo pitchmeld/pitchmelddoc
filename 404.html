@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pitchmeld Documentation</title>
+    <title>Page Not Found - Pitchmeld Documentation</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -38,9 +38,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Pitchmeld Documentation</h1>
-        <p>Select a version to browse.</p>
+    <div class="container" id="content">
+        <h1>Page Not Found</h1>
+        <p>The page you're looking for doesn't exist.</p>
+        <p>Browse available versions:</p>
         <ul class="version-list">
             <li><a href="/latest/">latest</a></li>
             <li><a href="/v0.82.4/">v0.82.4</a></li>
@@ -50,5 +51,19 @@
             <li><a href="/v0.81.2/">v0.81.2</a></li>
         </ul>
     </div>
+    <script>
+        (function() {
+            var latestVersion = '0.82.4.dev5';
+            var path = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+            // Handle /latest/* deep links (e.g., /latest/transformation.html)
+            if (path.startsWith('/latest/')) {
+                var remainder = path.substring('/latest/'.length);
+                var target = '/v' + latestVersion + '/' + remainder + search + hash;
+                window.location.replace(target);
+            }
+        })();
+    </script>
 </body>
 </html>
