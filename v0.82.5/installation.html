@@ -1,14 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
+  <head>
+    <meta name="robots" content="noindex"><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Installation" href="installation.html">
-        <link rel="canonical" href="https://docs.pitchmeld.ing/latest/index.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Transformation functions" href="transformation.html"><link rel="prev" title="Pitchmeld documentation" href="index.html">
+        <link rel="canonical" href="https://docs.pitchmeld.ing/v0.82.5/installation.html">
         <link rel="prefetch" href="_static/icon64.png" as="image">
 
     <link rel="shortcut icon" href="_static/favicon.ico"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Pitchmeld documentation 0.82.5</title>
+        <title>Installation - Pitchmeld documentation 0.82.5</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=acfd86a5" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -164,7 +165,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Pitchmeld documentation 0.82.5</div></a>
+      <a href="index.html"><div class="brand">Pitchmeld documentation 0.82.5</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -198,8 +199,8 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transformation.html">Transformation functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estimation.html">Estimation functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous functions</a></li>
@@ -242,58 +243,61 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="pitchmeld-documentation">
-<h1>Pitchmeld documentation<a class="headerlink" href="#pitchmeld-documentation" title="Link to this heading">¶</a></h1>
-<p>Pitchmeld is a python package dedicated to <strong>voice/speech processing</strong>.</p>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>High audio quality</p></li>
-<li><p>Blazing fast</p></li>
-<li><p>Super lightweight (can process hours long recordings without blowing up memory)</p></li>
-<li><p>Fully tested (unit tests and audio regression tests)</p></li>
-<li><p>Minimal dependencies (only numpy&gt;=1.0)</p></li>
-<li><p>Everything runs locally on your machine (no audio stream is sent to the cloud)</p></li>
-<li><p>Neutral parameter leads to resynthesis identical to the original signal</p></li>
-<li><p>Not introducing delays/latency during offline processing</p></li>
-<li><p>No time drifting during time stretching</p></li>
-</ul>
+          <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>You can simply use pip:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pitchmeld
+</pre></div>
+</div>
+<p>Pitchmeld is a “connected module”:
+First, you have to provide an API key in the environement variables that you obtain through <a class="reference external" href="https://pitchmeld.ing">the pitchmeld website</a>, ex.:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PITCHMELD_KEY</span><span class="o">=</span>api_duJhSwq878ii44VkyD0X3AIjG1eBpf0kZM3Zek4YXQHTlZhgGqxrWip7z6p8pyUW
+</pre></div>
+</div>
+<p>Then, you can run some python code, ex.:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pitchmeld; print(pitchmeld.__version__)&#39;</span>
+</pre></div>
+</div>
+<section id="license-verification">
+<h2>License verification<a class="headerlink" href="#license-verification" title="Link to this heading">¶</a></h2>
+<p>When loading the module with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pitchmeld</span></code>, the API key will be checked through the network and thus validate your usage license.
+This validation process starts when the module is loading, in the background, thus minimizing any delay before audio processing.</p>
+<p>If the license is not valid, and you run any transformation function, a <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> exception will be raised.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It assumes the signal is <em>monophonic</em>, like voice, speech, singing, a flute, a violin, a saxophone, etc.</p>
-<p>It is <em>not</em> recommended to use it on polyphonic signals like a piano, a guitar, a drum set, etc.</p>
+<p>No matter the validity of your license, you will always be able to import the pitchmeld module.
+This is to avoid that a licensing issue blocks a whole SaaS service that makes use of pitchmeld.</p>
 </div>
-</section>
-<section id="dependencies-and-compatibility">
-<h2>Dependencies and compatibility<a class="headerlink" href="#dependencies-and-compatibility" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No audio stream is passed to pitchmeld’s servers. 100% of the processing is done locally on your machine. We don’t want to hear about your audio, literally.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>So why this package needs to connect to the Internet and why does it need a license validation? The reasons are the following:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">numpy&gt;=1.0</a> is the only package that will be installed along the pitchmeld package.</p></li>
-<li><p>Python 3.9+ (please ask for lower versions if needed, not &lt;=2.7 though).</p></li>
-<li><p>Linux or Mac operating system.</p></li>
-<li><p>64bit architecture.</p></li>
-<li><p>Network connectivity is required to validate a license key (<a class="reference external" href="https://status.pitchmeld.ing/">status page</a>).</p></li>
+<li><p>Given the number of combinations of programming languages, architectures and platforms (OS, mobiles, etc.) it is almost impossible to run regression tests locally for each release for every combination. As a consequence, technical telemetry is very precious:</p></li>
+<li><p>It ensures constant improvement over supported languages, architectures and platforms.</p></li>
+<li><p>It helps spotting the most used and least performing architectures.</p></li>
+<li><p>In other words, it sets up our whole technical priority list.</p></li>
 </ul>
-</section>
-<section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformation.html">Transformation functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="estimation.html">Estimation functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#general-terms">1. General Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#specific-terms">2. Specific Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributions.html">Attributions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<p>Also, this connectivity allows to build a business model for:</p>
+<ul class="simple">
+<li><p>Paying us for our work building this tool.</p></li>
+<li><p>Paying us when we are taking care of our users’ requests.</p></li>
 </ul>
+<p>If no viable business model can be found, or, if there is no more active development on this project, Pitchmeld can be smoothly merged into the open-source project <a class="reference external" href="https://github.com/phoneshift/phaseshift">phaseshift</a>, thus making it free for everyone.</p>
+<p>Enjoy!</p>
 </div>
 </section>
-<section id="disclaimer">
-<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Link to this heading">¶</a></h2>
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">¶</a></h2>
+<p>To verify that everything is setup properly, you can run the tests provided with the module:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pitchmeld.tests; pitchmeld.tests.run()&#39;</span>
+</pre></div>
+</div>
+<p>This runs mainly smoke tests.</p>
+<p>This command does <em>not</em> run all regressions tests for audio processing, as they are too heavy to be shiped with the python module.</p>
 </section>
 </section>
 
@@ -302,16 +306,26 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="installation.html">
+          <a class="next-page" href="transformation.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Installation</div>
+                <div class="title">Transformation functions</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -342,11 +356,9 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Pitchmeld documentation</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#dependencies-and-compatibility">Dependencies and compatibility</a></li>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
-<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#license-verification">License verification</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
 </ul>
 </li>
 </ul>
