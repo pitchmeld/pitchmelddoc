@@ -1,14 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
+  <head>
+    <meta name="robots" content="noindex"><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Installation" href="installation.html">
-        <link rel="canonical" href="https://docs.pitchmeld.ing/latest/index.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="License" href="license.html"><link rel="prev" title="Estimation functions" href="estimation.html">
+        <link rel="canonical" href="https://docs.pitchmeld.ing/v0.82.6/misc.html">
         <link rel="prefetch" href="_static/icon64.png" as="image">
 
     <link rel="shortcut icon" href="_static/favicon.ico"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Pitchmeld documentation 0.82.6</title>
+        <title>Miscellaneous functions - Pitchmeld documentation 0.82.6</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=acfd86a5" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -164,7 +165,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Pitchmeld documentation 0.82.6</div></a>
+      <a href="index.html"><div class="brand">Pitchmeld documentation 0.82.6</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -198,11 +199,11 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transformation.html">Transformation functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estimation.html">Estimation functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous functions</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Miscellaneous functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html#general-terms">1. General Terms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html#specific-terms">2. Specific Terms</a></li>
@@ -242,58 +243,71 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="pitchmeld-documentation">
-<h1>Pitchmeld documentation<a class="headerlink" href="#pitchmeld-documentation" title="Link to this heading">¶</a></h1>
-<p>Pitchmeld is a python package dedicated to <strong>voice/speech processing</strong>.</p>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>High audio quality</p></li>
-<li><p>Blazing fast</p></li>
-<li><p>Super lightweight (can process hours long recordings without blowing up memory)</p></li>
-<li><p>Fully tested (unit tests and audio regression tests)</p></li>
-<li><p>Minimal dependencies (only numpy&gt;=1.0)</p></li>
-<li><p>Everything runs locally on your machine (no audio stream is sent to the cloud)</p></li>
-<li><p>Neutral parameter leads to resynthesis identical to the original signal</p></li>
-<li><p>Not introducing delays/latency during offline processing</p></li>
-<li><p>No time drifting during time stretching</p></li>
+          <section id="miscellaneous-functions">
+<h1>Miscellaneous functions<a class="headerlink" href="#miscellaneous-functions" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pitchmeld.lin2db">
+<span class="sig-prename descclassname"><span class="pre">pitchmeld.</span></span><span class="sig-name descname"><span class="pre">lin2db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pitchmeld.lin2db" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a linear amplitude value to a decibel value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – on a linear scale.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><cite>float</cite> - The value on a decibel scale.</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It assumes the signal is <em>monophonic</em>, like voice, speech, singing, a flute, a violin, a saxophone, etc.</p>
-<p>It is <em>not</em> recommended to use it on polyphonic signals like a piano, a guitar, a drum set, etc.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pitchmeld.db2lin">
+<span class="sig-prename descclassname"><span class="pre">pitchmeld.</span></span><span class="sig-name descname"><span class="pre">db2lin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pitchmeld.db2lin" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a decibel value to a linear amplitude value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – on a decibel scale.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><cite>float</cite> - The value on a linear scale.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="multiprocessing">
+<h2>Multiprocessing<a class="headerlink" href="#multiprocessing" title="Link to this heading">¶</a></h2>
+<p>Pitchmeld Python SDK uses a C/C++ python extension and this is generally not safe to use with the ‘fork’ start method (ex. like pytorch, tensorflow, etc.)
+Thus, when using multiprocessing, you need to use the ‘spawn’ start method instead of the ‘fork’ start method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="n">multiprocessing</span><span class="o">.</span><span class="n">set_start_method</span><span class="p">(</span><span class="s1">&#39;spawn&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
-<section id="dependencies-and-compatibility">
-<h2>Dependencies and compatibility<a class="headerlink" href="#dependencies-and-compatibility" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">numpy&gt;=1.0</a> is the only package that will be installed along the pitchmeld package.</p></li>
-<li><p>Python 3.9+ (please ask for lower versions if needed, not &lt;=2.7 though).</p></li>
-<li><p>Linux or Mac operating system.</p></li>
-<li><p>64bit architecture.</p></li>
-<li><p>Network connectivity is required to validate a license key (<a class="reference external" href="https://status.pitchmeld.ing/">status page</a>).</p></li>
-</ul>
-</section>
-<section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformation.html">Transformation functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="estimation.html">Estimation functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#general-terms">1. General Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#specific-terms">2. Specific Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributions.html">Attributions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
-</ul>
+<section id="slow-connection">
+<h2>Slow connection<a class="headerlink" href="#slow-connection" title="Link to this heading">¶</a></h2>
+<p>In case you are on a slow connection, you can increase the timeout for the connection to the server.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PITCHMELD_TIMEOUT</span><span class="o">=</span><span class="m">20</span>
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import pitchmeld; print(pitchmeld.__version__)&quot;</span>
+</pre></div>
 </div>
 </section>
-<section id="disclaimer">
-<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Link to this heading">¶</a></h2>
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<section id="exit-on-interrupt-eoi">
+<h2>Exit On Interrupt (EOI)<a class="headerlink" href="#exit-on-interrupt-eoi" title="Link to this heading">¶</a></h2>
+<p>Many C/C++ written python modules won’t react to a ctrl-c interruption (or equivalent).
+The C/C++ part will first finish its execution and the python part will then handle any ctrl-c.</p>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">pitchmeld.eoi()</span></code> after loading the module</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pitchmeld</span>
+<span class="n">pitchmeld</span><span class="o">.</span><span class="n">eoi</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>allows any ctrl-c to kill the C/C++ part immediately.</p>
+<p>You can deactivate <code class="docutils literal notranslate"><span class="pre">eoi()</span></code> with <code class="docutils literal notranslate"><span class="pre">pitchmeld.uneoi()</span></code></p>
+<p>By default, this uncommon behavior is disabled.</p>
 </section>
 </section>
 
@@ -302,16 +316,26 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="installation.html">
+          <a class="next-page" href="license.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Installation</div>
+                <div class="title">License</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="estimation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Estimation functions</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -342,11 +366,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Pitchmeld documentation</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#dependencies-and-compatibility">Dependencies and compatibility</a></li>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
-<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
+<li><a class="reference internal" href="#">Miscellaneous functions</a><ul>
+<li><a class="reference internal" href="#pitchmeld.lin2db"><code class="docutils literal notranslate"><span class="pre">lin2db()</span></code></a></li>
+<li><a class="reference internal" href="#pitchmeld.db2lin"><code class="docutils literal notranslate"><span class="pre">db2lin()</span></code></a></li>
+<li><a class="reference internal" href="#multiprocessing">Multiprocessing</a></li>
+<li><a class="reference internal" href="#slow-connection">Slow connection</a></li>
+<li><a class="reference internal" href="#exit-on-interrupt-eoi">Exit On Interrupt (EOI)</a></li>
 </ul>
 </li>
 </ul>

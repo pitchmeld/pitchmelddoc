@@ -1,14 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
+  <head>
+    <meta name="robots" content="noindex"><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Installation" href="installation.html">
-        <link rel="canonical" href="https://docs.pitchmeld.ing/latest/index.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="prev" title="Attributions" href="attributions.html">
+        <link rel="canonical" href="https://docs.pitchmeld.ing/v0.82.6/support.html">
         <link rel="prefetch" href="_static/icon64.png" as="image">
 
     <link rel="shortcut icon" href="_static/favicon.ico"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Pitchmeld documentation 0.82.6</title>
+        <title>Support - Pitchmeld documentation 0.82.6</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=acfd86a5" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -164,7 +165,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Pitchmeld documentation 0.82.6</div></a>
+      <a href="index.html"><div class="brand">Pitchmeld documentation 0.82.6</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -175,7 +176,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -198,7 +199,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transformation.html">Transformation functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estimation.html">Estimation functions</a></li>
@@ -207,7 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="license.html#general-terms">1. General Terms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html#specific-terms">2. Specific Terms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attributions.html">Attributions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Support</a></li>
 </ul>
 
 </div>
@@ -237,64 +238,23 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="pitchmeld-documentation">
-<h1>Pitchmeld documentation<a class="headerlink" href="#pitchmeld-documentation" title="Link to this heading">¶</a></h1>
-<p>Pitchmeld is a python package dedicated to <strong>voice/speech processing</strong>.</p>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+          <section id="support">
+<h1>Support<a class="headerlink" href="#support" title="Link to this heading">¶</a></h1>
+<p>If you meet any issue or have any feature request, please send it to the support address <a class="reference external" href="mailto:support&#37;&#52;&#48;pitchmeld&#46;ing">support<span>&#64;</span>pitchmeld<span>&#46;</span>ing</a>.</p>
+<p>If you meet a bug, please join to your email:</p>
 <ul class="simple">
-<li><p>High audio quality</p></li>
-<li><p>Blazing fast</p></li>
-<li><p>Super lightweight (can process hours long recordings without blowing up memory)</p></li>
-<li><p>Fully tested (unit tests and audio regression tests)</p></li>
-<li><p>Minimal dependencies (only numpy&gt;=1.0)</p></li>
-<li><p>Everything runs locally on your machine (no audio stream is sent to the cloud)</p></li>
-<li><p>Neutral parameter leads to resynthesis identical to the original signal</p></li>
-<li><p>Not introducing delays/latency during offline processing</p></li>
-<li><p>No time drifting during time stretching</p></li>
+<li><p>A minimal code snippet that reproduces the issue.</p></li>
+<li><p>The output of the following commands:</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It assumes the signal is <em>monophonic</em>, like voice, speech, singing, a flute, a violin, a saxophone, etc.</p>
-<p>It is <em>not</em> recommended to use it on polyphonic signals like a piano, a guitar, a drum set, etc.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PITCHMELD_KEY</span><span class="o">=</span>api__valid_or_invalid_license_token_
+python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pitchmeld; print(pitchmeld.info)&#39;</span>
+</pre></div>
 </div>
-</section>
-<section id="dependencies-and-compatibility">
-<h2>Dependencies and compatibility<a class="headerlink" href="#dependencies-and-compatibility" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">numpy&gt;=1.0</a> is the only package that will be installed along the pitchmeld package.</p></li>
-<li><p>Python 3.9+ (please ask for lower versions if needed, not &lt;=2.7 though).</p></li>
-<li><p>Linux or Mac operating system.</p></li>
-<li><p>64bit architecture.</p></li>
-<li><p>Network connectivity is required to validate a license key (<a class="reference external" href="https://status.pitchmeld.ing/">status page</a>).</p></li>
-</ul>
-</section>
-<section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformation.html">Transformation functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="estimation.html">Estimation functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#general-terms">1. General Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#specific-terms">2. Specific Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributions.html">Attributions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
-</ul>
-</div>
-</section>
-<section id="disclaimer">
-<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Link to this heading">¶</a></h2>
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-</section>
 </section>
 
         </article>
@@ -302,16 +262,18 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="installation.html">
+          
+          <a class="prev-page" href="attributions.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
-                  <span>Next</span>
+                  <span>Previous</span>
                 </div>
-                <div class="title">Installation</div>
+                
+                <div class="title">Attributions</div>
+                
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -330,30 +292,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Pitchmeld documentation</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#dependencies-and-compatibility">Dependencies and compatibility</a></li>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
-<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
